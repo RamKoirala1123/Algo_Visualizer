@@ -28,6 +28,27 @@ nav > .container-fluid > span.about-algo:hover {
 }
 
 
+ul a:hover{
+  color:rgb(209, 76, 209)!important;
+}
+
+li > a:after{
+    content: '';
+    display: block;
+    height: 1.5px;
+    background: rgb(209, 76, 209) ;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+li > a:hover:after{
+    transform: scaleX(1);
+    transition: transform .3s;
+}
+.active{
+    color:rgb(209, 76, 209) !important;
+}
+
+
 body > .container_fluid {
   height: 90vh;
   align-self: center;
