@@ -26,33 +26,6 @@ nav > .container-fluid > span.about-algo {
 nav > .container-fluid > span.about-algo:hover {
   color: #fff;
 }
-/* nav .container-fluid .collapse.navbar-collapse ul.nav.navbar-nav  li.nav-item:after  a.nav-link:after {
-  content:"";
-  position:absolute;
-  background-color:#ff3c78;
-  height:3px;
-  width:100%;
-  left: 0;
-  bottom:-10px;
-
-} */
- /* a {
-  position:relative;
-}
-/* 
-ul li a{
-  position:relative;
-} */
-/*
- a:after{
-  content:"";
-  position:absolute;
-  background-color:#ff3c78;
-  height:3px;
-  width:100%;
-  left: 0;
-  bottom:-10px;
-}  */
 
 
 body > .container_fluid {
@@ -96,11 +69,8 @@ canvas {
   place-items: center;
   height: 100%;
   background:#d7e6ff;
-  /* padding: 0; */
 }
-/* .settings_panel label{
 
-} */
 .settings_panel:first-child {
   display: flex;
   flex-direction: column;
