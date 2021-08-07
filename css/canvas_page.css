@@ -27,12 +27,11 @@ nav > .container-fluid > span.about-algo:hover {
   color: #fff;
 }
 
-
-ul a:hover{
+ul.navbar-nav a:hover{
   color:rgb(209, 76, 209)!important;
 }
 
-li > a:after{
+li.nav-item > a:after{
     content: '';
     display: block;
     height: 1.5px;
@@ -40,7 +39,7 @@ li > a:after{
     transform: scaleX(0);
     transition: transform .3s;
 }
-li > a:hover:after{
+li.nav-item > a:hover:after{
     transform: scaleX(1);
     transition: transform .3s;
 }
