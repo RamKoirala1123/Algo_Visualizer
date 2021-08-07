@@ -572,7 +572,11 @@ const Utils = {
     time: Date.now(),
     cancelAnimation: function () {
       window.cancelAnimationFrame(Utils.AnimationController.animation);
-      document.getElementById("playPause").classList.toggle("paused");
+      let element = document.getElementById("playPause");
+      if(element.classList.length == 1)
+      {
+        element.classList.toggle("paused");
+      }
     },
   },
 };
@@ -1090,6 +1094,7 @@ function drawGrid() {
 const clearResourcesSort = function() {
   Utils.Sorting.arr = [];
   document.getElementById("myRange").disabled = true;
+  Utils.Sorting.arr_y = [];
 };
 
 const clearResourcesPathFind = function (functions) {
@@ -1106,14 +1111,24 @@ const clearResourcesTree = function()
   document.getElementById("tree-data").style.display = "none";
   document.getElementById("tree-container").style.display = "none";
   document.getElementById("canvas").style.zIndex = 0;
+  document.getElementById("tree_inputs").style.display = "none";
 }
 
 function getTreeData()
 {
+  const help = ["insert", "delete", "search","inorder","preorder","postorder"]
   let id = document.getElementById("tree_options").value;
   let text = document.getElementById("inputsvalue").value;
   let arr = text.split(',');
   let value;
+  if(id != '4' && id != '5' && id != '6'){
+    let temp = document.querySelector("#tree_inputs > p").innerHTML;
+    document.querySelector("#tree_inputs > p").innerHTML = temp + "<br>" + help[parseInt(id)-1]+" " + text;
+  }
+  else{
+    let temp = document.querySelector("#tree_inputs > p").innerHTML;
+    document.querySelector("#tree_inputs > p").innerHTML = temp + "<br>" + help[parseInt(id)-1];
+  }
   arr.forEach(element=>
   {
     value = parseInt(element);
@@ -1122,7 +1137,7 @@ function getTreeData()
     }
   });
   value = parseInt(id);
-  if(value === 5 || value === 6 || value === 7)
+  if(value === 4 || value === 5 || value === 6)
   {
     LinBst.inputedValues.push([0,value]);
   }
@@ -1159,6 +1174,7 @@ function makeReady(flag, functions) {
     document.getElementById("canvas").style.zIndex = 3;
     document.getElementById("tree-data").style.display = "block";
     document.getElementById("tree-container").style.display = "flex";
+    document.getElementById("tree_inputs").style.display = "block";
     clearResourcesSort();
     clearResourcesPathFind(functions);
 
@@ -1202,7 +1218,7 @@ function drawsmallRectangles() {
   Utils.AnimationController.elapsed_time = Utils.AnimationController.now - Utils.AnimationController.time;
   if (Utils.AnimationController.playing) {
     let pos;
-    if (Utils.AnimationController.elapsed_time >= Utils.AnimationController.frameRate) {
+    if (Utils.AnimationController.elapsed_time >= (Utils.AnimationController.frameRate / 4)) {
       drawGrid();
       drawInputpos();
       for (let i = 0; i <= Utils.AnimationController.queueIndex; i++) {
