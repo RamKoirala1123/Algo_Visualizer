@@ -23,7 +23,7 @@ nav > .container-fluid > span.about-algo {
   cursor: pointer;
 }
 
-nav > .container-fluid > span.about-algo:hover {
+/* nav > .container-fluid > span.about-algo:hover {
   color: #fff;
 }
 
@@ -31,11 +31,22 @@ nav > .container-fluid > span.instructions a {
   text-decoration: none;
   color: #c7c8c9;
   cursor: pointer;
-}
+} */
 
-nav > .container-fluid > span.instructions a:hover {
+/* nav > .container-fluid > span.instructions a:hover {
+  color: #fff;
+} */
+
+nav> .container-fluid > .instructions a{
+  text-decoration: none;
+  color: #c7c8c9;
+  cursor: pointer;
+}
+nav > .container-fluid > .instructions a:hover {
   color: #fff;
 }
+
+
 
 ul.navbar-nav a:hover{
   color:rgb(209, 76, 209)!important;
